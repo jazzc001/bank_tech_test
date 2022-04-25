@@ -8,6 +8,10 @@ class BankAccount {
         return this.balance += money;
     }
 
+    withdrawal(money) {
+        return this.balance -= money;
+    }
+
 
 }
 
