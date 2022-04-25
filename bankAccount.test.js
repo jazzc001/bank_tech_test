@@ -1,6 +1,6 @@
 const BankAccount = require('./bankAccount')
 
-describe('bankAccount', ()=> {
+describe('bankAccount', () => {
     let account;
     beforeEach(()=> {
         account = new BankAccount();
