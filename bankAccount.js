@@ -1,3 +1,5 @@
+const {dateFormatter} = require('./formatHelper')
+
 class BankAccount {
 
     constructor() {
@@ -16,12 +18,14 @@ class BankAccount {
         this.transaction.push({Date: new Date(), Credit: money, Debit: 0, Balance: this.balance});
     }
 
-    print() {
+    printStatement() {
         console.log('Date  || Credit || Debit || Balance')
-        for(let i = 0; i<this.transaction.length ; i++ ) {
+        for(let i = 0; i < this.transaction.length ; i++ ) {
             console.log(`\n${this.transaction[i].Date} || ${this.transaction[i].Credit} || ${this.transaction[i].Debit} || ${this.transaction[i].Balance}`)
         }
     }
+
+   
 }
 
 module.exports = BankAccount;
