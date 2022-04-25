@@ -2,21 +2,26 @@ class BankAccount {
 
     constructor() {
         this.balance = 0;
-        this.#transaction = [];
+        this.transaction = [];
     }
 
     deposit(money) {
         this.balance += money;
-        this.transaction.push({date: new Date(), credit: 0, debit: money, balance: this.balance});
+        this.transaction.push({Date: new Date(), Credit: 0, Debit: money, Balance: this.balance});
         
     }
 
     withdrawal(money) {
         this.balance -= money;
-        this.transaction.push({date: new Date(), credit: money, debit: 0, balance: this.balance});
+        this.transaction.push({Date: new Date(), Credit: money, Debit: 0, Balance: this.balance});
     }
 
-    print()
+    print() {
+        console.log('Date  || Credit || Debit || Balance')
+        for(let i = 0; i<this.transaction.length ; i++ ) {
+            console.log(`\n${this.transaction[i].Date} || ${this.transaction[i].Credit} || ${this.transaction[i].Debit} || ${this.transaction[i].Balance}`)
+        }
+    }
 }
 
 module.exports = BankAccount;
